@@ -3,7 +3,8 @@ FROM alpine:3.10
 
 # Install git
 
-RUN apt-get update && apt-get -y install git
+RUN apk update && apk upgrade && \
+    apk add --no-cache bash git openssh
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh
