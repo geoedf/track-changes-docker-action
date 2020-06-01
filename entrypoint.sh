@@ -1,5 +1,5 @@
 #!/bin/sh -l
 
-res = $(git diff-tree --no-commit-id --name-only -r $GITHUB_SHA)
+cd /github/workspace 
 
-echo $res
+echo `git diff-tree --no-commit-id --name-only -r $GITHUB_SHA`
