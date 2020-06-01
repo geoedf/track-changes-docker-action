@@ -1,4 +1,5 @@
 #!/bin/sh -l
 
-echo "SHA $1"
-echo "RETRY $GITHUB_SHA"
+res = $(git diff-tree --no-commit-id --name-only -r $GITHUB_SHA)
+
+echo $res
