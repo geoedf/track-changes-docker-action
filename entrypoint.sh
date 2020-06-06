@@ -12,8 +12,11 @@ do
   if [ `basename $path` != $path ]
   then
       val=$(echo $path | tr "/" "\n" | head -1)
-      res[indx]=$val
-      ((indx++))
+      if [ $val != '.github' ]
+      then
+         res[indx]=$val
+         ((indx++))
+      fi
   fi
 done
 echo "::set-output name=folders::${res[*]}"
