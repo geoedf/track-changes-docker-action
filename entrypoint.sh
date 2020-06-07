@@ -14,8 +14,11 @@ do
       val=$(echo $path | tr "/" "\n" | head -1)
       if [ $val != '.github' ]
       then
-         res[indx]=$val
-         ((indx++))
+         if [[ ! " ${res[@]} " =~ " ${val} " ]];
+         then
+           res[indx]=$val
+           ((indx++))
+         fi
       fi
   fi
 done
