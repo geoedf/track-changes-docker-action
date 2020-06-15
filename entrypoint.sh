@@ -8,8 +8,8 @@ indx=0
 declare -a res
 
 for path in $changed_files
-echo $path
 do
+  echo "changed file: $path"
   if [ `basename $path` != $path ]
   then
       val=$(echo $path | tr "/" "\n" | head -1)
