@@ -8,6 +8,7 @@ indx=0
 declare -a res
 
 for path in $changed_files
+echo "changed file: $path"
 do
   if [ `basename $path` != $path ]
   then
